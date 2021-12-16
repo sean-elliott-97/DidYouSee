@@ -1,1 +1,1 @@
-const
+const path = require('path');
