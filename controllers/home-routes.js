@@ -1,5 +1,5 @@
- const router=require('express').Router();
-const {Gallery, Movie}=require('../models');
+const router=require('express').Router();
+const { Gallery, Movie }=require('../models');
 const withAuth=require('../utils/auth');
 
 router.get('/', async(req,res)=> {
@@ -8,7 +8,7 @@ router.get('/', async(req,res)=> {
             include: [
                 {
                     model: Movie,
-                    attributes: ['title','plot'],
+                    attributes: ['title', 'plot'],
                 },
             ],
         });
