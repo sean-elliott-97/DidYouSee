@@ -1,0 +1,10 @@
+ {{#each allMovies }}
+    <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{this.dataValues.poster}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{this.dataValues.title}}</h5>
+    <p class="card-text">{{this.dataValues.plot}}</p>
+    <a href="#" class="btn btn-primary">Add</a>
+  </div>
+</div>
+ {{/each}}

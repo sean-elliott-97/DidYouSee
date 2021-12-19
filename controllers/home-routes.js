@@ -41,9 +41,28 @@ router.get('/movie/:id',withAuth,async(req,res)=>{
     }
 });
 
+//getting all movies
+router.get("/movie",withAuth,async(req,res)=>{
+  
+    try {
+      const allMovies = await Movie.findAll();
+      //console.log(allMovies);
+      for(let i =0;i<allMovies.length;i++){
+        console.log(allMovies[i].dataValues.title);
+      }
+      
+      //const movies = dbMovieData.get({ plain: true });
+      //results = results.map( (r) => ( r.toJSON() ) )
+      res.render("allMovies", { allMovies, loggedIn: req.session.loggedIn });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+    });
+
 router.get('/login',(req,res)=>{
     if(req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('/movie');
         return;
     }
     res.render('login');
