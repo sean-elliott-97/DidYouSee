@@ -19,11 +19,11 @@ Movie.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id:{
-      type:DataTypes.INTEGER,
-      allowNull:false,
-      defaultValue:false,
-    },
+    // user_id:{
+    //   type:DataTypes.INTEGER,
+    //   allowNull:false,
+    //   defaultValue:false,
+    // },
   },
   {
     sequelize,

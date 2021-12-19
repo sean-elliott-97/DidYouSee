@@ -16,8 +16,16 @@ Gallery.init(
             allowNull: false,
         },
         run_time: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
+        },
+        genre:{
+            type:DataTypes.STRING,
+            allowNull:false,
+        },
+        release_year:{
+            type:DataTypes.INTEGER,
+            allowNull:false,
         },
         gallery_id: {
             type: DataTypes.INTEGER,
