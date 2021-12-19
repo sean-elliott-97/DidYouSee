@@ -1,16 +1,14 @@
 const User = require('./User');
-
+const Gallery=require('./Gallery');
 const Movie=require('./Movie');
 
 
-
-//doesn't work yet
-User.hasMany(Movie,{
-    foreignKey:'user_id',
-    onDelete:'cascade'
-});
-Movie.belongsTo(User,{
-    foreignKey:'user_id',
+Gallery.hasMany(Movie, {
+    foreignKey: 'gallery_id'
 });
 
-module.exports = { User, Movie };
+Movie.belongsTo(Gallery, {
+    foreignKey: 'gallery_id'
+});
+
+module.exports = { User, Movie, Gallery };
