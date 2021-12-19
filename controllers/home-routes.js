@@ -8,7 +8,7 @@ router.get('/', async(req,res)=> {
             include: [
                 {
                     model: Movie,
-                    attributes: ['filename','description'],
+                    attributes: ['title','plot'],
                 },
             ],
         });
