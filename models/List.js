@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Movie extends Model {}
+class List extends Model {}
 
-Movie.init(
+List.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,29 +15,25 @@ Movie.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    plot: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    listMovies:{
+        type:DataTypes.STRING,
+        allowNull:true,
     },
-    poster:{
-      type:DataTypes.STRING,
-      allowNull:false,
-    },
-    user_id:{
-      type:DataTypes.INTEGER,
-      references:{
-          model:'user',
-          key:'id'
-      },
-    },
-  
+   
+     user_id:{
+       type:DataTypes.INTEGER,
+       references:{
+           model:'user',
+           key:'id'
+       },
+     },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'movie',
+    modelName: 'list',
   }
 );
 
-module.exports = Movie;
+module.exports = List;
