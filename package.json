@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "seeds/index.js",
-    "start":"node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,12 @@
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
     "sequelize": "^6.12.0-beta.3",
-    "session": "^0.1.0"
+    "session": "^0.1.0",
+    "uniqid": "^5.4.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
   }
 }
