@@ -9,19 +9,17 @@ List.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      // autoIncrement: true,
     },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    listMovies:{
-        type:DataTypes.STRING,
-        allowNull:true,
-    },
+  
    
      user_id:{
        type:DataTypes.INTEGER,
+       
        references:{
            model:'user',
            key:'id'

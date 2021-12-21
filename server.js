@@ -3,7 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+const bodyParser = require('body-parser');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
@@ -20,7 +20,8 @@ const sess = {
     db: sequelize,
   }),
 };
-
+app.use(bodyParser.urlencoded());
+//app.use(express.json());
 app.use(session(sess));
 
 const hbs = exphbs.create({ helpers });

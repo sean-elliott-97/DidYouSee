@@ -1,4 +1,6 @@
-<p>Lists</p>
-<ul>
-<li>list 1</li>
-</ul>
+{{#each allLists}}
+<h1>{{this.dataValues.id}}</h1> <a href='/list/{{this.dataValues.id}}'><p>{{this.dataValues.title}}</p>
+</a>
+<button class ="delete" id="delete{{this.dataValues.id}}">Delete from List</button>
+{{/each}}
+<script src="./js/deleteListItems.js"></script>

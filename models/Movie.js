@@ -23,13 +23,13 @@ Movie.init(
       type:DataTypes.STRING,
       allowNull:false,
     },
-    user_id:{
-      type:DataTypes.INTEGER,
-      references:{
-          model:'user',
-          key:'id'
-      },
-    },
+    // user_id:{
+    //   type:DataTypes.INTEGER,
+    //   references:{
+    //       model:'user',
+    //       key:'id'
+    //   },
+    // },
   
   },
   {
