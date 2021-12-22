@@ -1,52 +1,60 @@
-const router=require('express').Router();
-const { Gallery, Movie }=require('../models');
-const withAuth=require('../utils/auth');
+const router = require("express").Router();
+const { Movie, List } = require("../models");
+// Import the custom middleware
+const withAuth = require("../utils/auth");
 
-router.get('/', async(req,res)=> {
-    try {
-        const dbGalleryData=await Gallery.findAll({
-            include: [
-                {
-                    model: Movie,
-                    attributes: ['title', 'plot'],
-                },
-            ],
-        });
-
-        const galleries=dbGalleryData.map((gallery)=>
-        gallery.get({plain: true})
-        );
-
-        res.render('homepage', {
-            galleries,
-            loggedIn:req.session.loggedIn,
-        });
-    } catch(err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
+//get route for homepage
+router.get("/", async (req, res) => {
+  res.render("homepage", {
+    loggedIn: req.session.loggedIn,
+  });
 });
 
-//GET a movie
-router.get('/movie/:id',withAuth,async(req,res)=>{
-    try{
-        const dbMovieData=await Movie.findByPk(req.params.id);
+//get route for login page
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/movie");
 
-        const movies=dbMovieData.get({plain:true});
+    return;
+  }
 
-        res.render('movie',{movies, loggedIn:req.session.loggedIn});
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
+  res.render("login");
 });
 
-router.get('/login',(req,res)=>{
-    if(req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-    res.render('login');
+//get route for getting all lists
+router.get("/list", async (req, res) => {
+  try {
+    const allLists = await List.findAll();
+    res.render("list", { allLists, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
-module.exports=router;
+//getting all movies
+router.get("/movie", withAuth, async (req, res) => {
+  try {
+    const allMovies = await Movie.findAll();
+  
+    res.render("allMovies", { allMovies, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+//getting movie by id
+router.get("/movie/:id", withAuth, async (req, res) => {
+  try {
+    const dbMovieData = await Movie.findByPk(req.params.id);
+    console.log(dbMovieData);
+    const movies = dbMovieData.get({ plain: true });
+
+    res.render("movie", { movies, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+module.exports = router;

@@ -1,14 +1,24 @@
-const User = require('./User');
-const Gallery=require('./Gallery');
-const Movie=require('./Movie');
+const User = require("./User");
+const Movie = require("./Movie");
+const List = require("./List");
 
-
-Gallery.hasMany(Movie, {
-    foreignKey: 'gallery_id'
+User.hasMany(List, {
+  foreignKey: "user_id",
+});
+List.belongsTo(User, {
+  foreignKey: "user_id",
+});
+Movie.belongsTo(User, {
+  foreignKey: "user_id",
+});
+Movie.belongsTo(List, {
+  foreignKey: "list_id",
+});
+User.hasMany(Movie, {
+  foreignKey: "user_id",
+});
+List.hasMany(Movie, {
+  foreignKey: "list_id",
 });
 
-Movie.belongsTo(Gallery, {
-    foreignKey: 'gallery_id'
-});
-
-module.exports = { User, Movie, Gallery };
+module.exports = { User, Movie, List };
