@@ -8,8 +8,9 @@ router.post('/', async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
-    });
-
+      
+    })
+    
     req.session.save(() => {
       req.session.loggedIn = true;
 
@@ -29,7 +30,6 @@ router.post('/login', async (req, res) => {
         email: req.body.email,
       },
     });
-
     if (!dbUserData) {
       res
         .status(400)
@@ -70,4 +70,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-module.exports = router;
+
+
+module.exports=router;
+

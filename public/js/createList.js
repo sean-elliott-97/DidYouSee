@@ -51,6 +51,49 @@ $("#6").click(function () {
   //alert(JSON.stringify(movieCardArray));
   $("#6").hide();
 });
+$("#7").click(function () {
+  let movieCardTitle = $(this).siblings("h5").text();
+  listObject=[{ id: 7, title: movieCardTitle }];
+
+  submitList.attr("style", "visibility:visible");
+
+  $("#7").hide();
+});
+$("#8").click(function () {
+  let movieCardTitle = $(this).siblings("h5").text();
+  listObject=[{ id: 8,title: movieCardTitle }];
+  submitList.attr("style", "visibility:visible");
+  // alert(JSON.stringify(movieCardArray));
+  $("#8").hide();
+});
+$("#9").click(function () {
+  let movieCardTitle = $(this).siblings("h5").text();
+  listObject=[{ id: 9,title: movieCardTitle }];
+  submitList.attr("style", "visibility:visible");
+  //alert(JSON.stringify(movieCardArray));
+  $("#9").hide();
+});
+$("#10").click(function () {
+  let movieCardTitle = $(this).siblings("h5").text();
+  listObject=[{ id: 10, title: movieCardTitle }];
+  submitList.attr("style", "visibility:visible");
+  // alert(JSON.stringify(movieCardArray));
+  $("#10").hide();
+});
+$("#11").click(function () {
+  let movieCardTitle = $(this).siblings("h5").text();
+  listObject=[{ id: 11,title: movieCardTitle }];
+  submitList.attr("style", "visibility:visible");
+  //alert(JSON.stringify(movieCardArray));
+  $("#11").hide();
+});
+$("#12").click(function () {
+  let movieCardTitle = $(this).siblings("h5").text();
+  listObject=[{ id: 12,title: movieCardTitle }];
+  submitList.attr("style", "visibility:visible");
+  //alert(JSON.stringify(movieCardArray));
+  $("#12").hide();
+});
 
 // for posting movies to list
 $(".moviePost").click(async function () {

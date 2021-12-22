@@ -17,6 +17,24 @@ $("#delete5").click(function () {
 $("#delete6").click(function () {
   id = 6;
 });
+$("#delete7").click(function () {
+  id = 7;
+});
+$("#delete8").click(function () {
+  id = 8;
+});
+$("#delete9").click(function () {
+  id = 9;
+});
+$("#delete10").click(function () {
+  id = 10;
+});
+$("#delete11").click(function () {
+  id = 11;
+});
+$("#delete12").click(function () {
+  id = 12;
+});
 
 //console.log(id);
 $(".delete").click(async function () {

@@ -8,12 +8,12 @@ User.hasMany(List, {
 List.belongsTo(User, {
   foreignKey: "user_id",
 });
-Movie.belongsTo(User, {
-  foreignKey: "user_id",
-});
-Movie.belongsTo(List, {
-  foreignKey: "list_id",
-});
+// Movie.belongsTo(User, {
+//   foreignKey: "user_id",
+// });
+// Movie.belongsTo(List, {
+//   foreignKey: "list_id",
+// });
 
 
 module.exports = { User, Movie, List };
