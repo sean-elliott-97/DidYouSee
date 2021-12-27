@@ -1,0 +1,8 @@
+{{#each loggedUserData}}
+<h1>{{this.dataValues.title}}</h1>
+<img src="{{this.dataValues.poster}}"></img>
+<p>{{this.dataValues.plot}}</p>
+<button class = "delete" id="{{this.dataValues.id}}">Delete</button>
+{{/each}}
+
+<script src="./js/deleteListItems.js"></script>
