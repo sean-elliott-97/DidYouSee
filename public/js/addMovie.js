@@ -4,6 +4,7 @@
 
 var currentMovieData =[];
 
+
 $("#search").click(async function () {
   
   //fetches movie data from omdb
@@ -25,12 +26,14 @@ $("#search").click(async function () {
 
     });
     $("#mAddToList").click(async function () {
-          
-
+      //hides movieSearch div    
+      $("#movieSearch").css("visibility","hidden");
       //decide on other movie info to include
-       //currentMovieData =[data.Title,data.Plot,data.Poster];
-      //console.log(currentMovieData); 
-      $("#mAddToList").css("visibility","hidden");
+      
+      //removes add to list button and movie title
+      $("#mAddToList").remove();
+      $("#mTitle").remove();
+      
       $("#refresh").css("visibility","visible");  
         const options = {
           method: "POST",
@@ -43,7 +46,7 @@ $("#search").click(async function () {
         const res = await fetch("/movie", options).then(( response) => {
           
           
-          //console.log(response.json());
+          
           console.log(response.json());
           
         })
