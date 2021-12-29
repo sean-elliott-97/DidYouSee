@@ -1,8 +1,26 @@
+<div
+  id="movieSearch"
+  style="align-items: center;
+  display: flex;
+  justify-content: center;"
+>
+  <label for="">type in a movie you'd like to add to your list</label>
+  <input type="text" id="movieName" />
+  <button id="search">Add</button>
+</div>
+<div class="row row-cols-1 row-cols-md-3">
 {{#each loggedUserData}}
-<h1>{{this.dataValues.title}}</h1>
-<img src="{{this.dataValues.poster}}"></img>
-<p>{{this.dataValues.plot}}</p>
+<div class="col mb-4">
+<div class="card h-100">
+<img src="{{this.dataValues.poster}}" class="card-img-top"></img>
+<div class="card-body">
+<h5 class="card-title">{{this.dataValues.title}}</h5>
+<p class='card-text'>{{this.dataValues.plot}}</p>
 <button class = "delete" id="{{this.dataValues.id}}">Delete</button>
+</div>
+</div>
+</div>
 {{/each}}
-
+</div>
+<script src="./js/addMovie.js"></script>
 <script src="./js/deleteListItems.js"></script>
