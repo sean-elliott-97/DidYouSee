@@ -1,14 +1,13 @@
 <container>
-<h1>{{movie.title}}</h1>
-<img src="{{movie.poster}}" alt="">
-<p><strong>Plot:</strong> {{movie.plot}}</p>
-<p><strong>Rated:</strong> {{movie.rating}}</p>
-<p><strong>Director:</strong> {{movie.director}}</p>
-<p><strong>Actors:</strong> {{movie.actors}}</p>
-<p><strong>Runtime:</strong> {{movie.runtime}}</p>
-
-
-
-
-
+  <div class="card">
+     <div class="card-body"> 
+    <h1 class="card-title">{{movie.title}}</h1>
+    <img src="{{movie.poster}}" style="max-width:25%;max-height:25%;"alt="" />
+    <p><strong>Plot:</strong> {{movie.plot}}</p>
+    <p><strong>Rated:</strong> {{movie.rating}}</p>
+    <p><strong>Director:</strong> {{movie.director}}</p>
+    <p><strong>Actors:</strong> {{movie.actors}}</p>
+    <p><strong>Runtime:</strong> {{movie.runtime}}</p>
+  </div>
+</div>
 </container>

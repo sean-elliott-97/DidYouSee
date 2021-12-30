@@ -1,5 +1,13 @@
 const router = require('express').Router();
 const { User,List } = require('../../models');
+const env = require("dotenv").config();
+const nodemailer=require('nodemailer');
+const transporterEmail = process.env.TRANSPORTER_EMAIL;
+const transporterPassword=process.env.TRANSPORTER_PASSWORD;
+//transporter: sender information (uses it to authenticate)
+
+
+
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -24,6 +32,28 @@ router.post('/', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+  //options
+  const transporter = nodemailer.createTransport({
+    service:"hotmail",
+    auth:{
+      user:transporterEmail,
+      pass:transporterPassword
+  }
+  })
+const options = {
+	from:transporterEmail,
+	to:req.body.email,
+	subject:"DidYouSee account created",
+	text:"Welcome to DidYouSee! Search for movies to add to your list!"
+}
+
+transporter.sendMail(options, function(err,info){
+if(err){
+console.log(err);
+return;
+}
+console.log("Sent:"+info.response);
+})
 })
 
 // Login

@@ -4,23 +4,27 @@
   display: flex;
   justify-content: center;"
 >
-  <label for="">type in a movie you'd like to add to your list</label>
-  <input type="text" id="movieName" />
-  <button id="search">Add</button>
+  {{!-- <label for="">type in a movie you'd like to add to your list</label> --}}
+  <input type="text" placeholder="movie title"id="movieName" size=50>
+  <button id="search"class ="btn btn-primary">Add</button>
 </div>
-<div class="row row-cols-1 row-cols-md-3">
+
+<div class="row row-cols-1 row-cols-md-3 equal h-75" style="align-items: center;
+  display: flex;
+  justify-content: center; margin-left:11%; margin-top:4%; margin-bottom:1%;">
 {{#each loggedUserData}}
 <div class="col mb-4">
-<div class="card h-100">
-<a href="/movie/{{this.dataValues.id}}"><img src="{{this.dataValues.poster}}" class="card-img-top"></img></a>
+<div class="card h-100"  style="width: 18rem;">
+<a href="/movie/{{this.dataValues.id}}"><img src="{{this.dataValues.poster}}" class="card-img-top" ></img></a>
 <div class="card-body">
 <h5 class="card-title">{{this.dataValues.title}}</h5>
 <p class='card-text'>{{this.dataValues.plot}}</p>
-<button class = "delete" id="{{this.dataValues.id}}">Delete</button>
+<button class = "delete btn btn-danger" id="{{this.dataValues.id}}">Delete</button>
 </div>
 </div>
 </div>
 {{/each}}
 </div>
+
 <script src="/js/addMovie.js"></script>
 <script src="/js/deleteListItems.js"></script>
