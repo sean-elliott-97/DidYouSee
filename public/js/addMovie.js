@@ -11,7 +11,7 @@ $("#search").click(async function () {
   };
   console.log(movieTitle);
  
-  const res = await fetch("/api/list", options).then((response) => {
+  const res = await fetch("/list", options).then((response) => {
     console.log(response);
     console.log(movieTitle);
     if(movieTitle!==''){
