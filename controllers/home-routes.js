@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 //get route for login page
 router.get("/login", async (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect("/api/list/");
 
     return;
   }
