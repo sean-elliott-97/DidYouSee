@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
   });
 router.post("/", async (req, res) => {
     let movieTitle = req.body[0];
-  
+  try{
     axios
       .get(`https://www.omdbapi.com/?apikey=${API_KEY}&t=${movieTitle}`)
       .then((response) => {
@@ -46,7 +46,10 @@ router.post("/", async (req, res) => {
       
       })
       .catch((err) => console.log(err));
-    
+  }catch(err){
+    console.log(err);
+    res.status(500).json(err);
+  }
   });
   
 
