@@ -56,6 +56,7 @@ router.delete("/movie/:id", withAuth, async (req, res) => {
 });
 
 router.get("/list", async (req, res) => {
+  try{
   const loggedUserData = await Movie.findAll({
     where: {
       list_id: req.session.user_id,
@@ -63,6 +64,10 @@ router.get("/list", async (req, res) => {
   });
  // console.log(loggedUserData);
   res.render("list", { loggedUserData, loggedIn: req.session.loggedIn });
+  }catch(err){
+    console.log(err);
+  res.status(500).json(err);
+  }
 });
 router.post("/list", async (req, res) => {
   let movieTitle = req.body[0];
