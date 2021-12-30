@@ -12,7 +12,7 @@
 {{#each loggedUserData}}
 <div class="col mb-4">
 <div class="card h-100">
-<img src="{{this.dataValues.poster}}" class="card-img-top"></img>
+<a href="/movie/{{this.dataValues.id}}"><img src="{{this.dataValues.poster}}" class="card-img-top"></img></a>
 <div class="card-body">
 <h5 class="card-title">{{this.dataValues.title}}</h5>
 <p class='card-text'>{{this.dataValues.plot}}</p>
@@ -22,5 +22,5 @@
 </div>
 {{/each}}
 </div>
-<script src="./js/addMovie.js"></script>
-<script src="./js/deleteListItems.js"></script>
+<script src="/js/addMovie.js"></script>
+<script src="/js/deleteListItems.js"></script>
