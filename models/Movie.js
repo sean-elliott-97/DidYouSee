@@ -19,15 +19,42 @@ Movie.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    poster: {
+    poster:{
+      type:DataTypes.STRING,
+      allowNull:false,
+    },
+    rating: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
+    },
+    director: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    actors:{
+      type:DataTypes.STRING,
+      allowNull:false,
+    },
+    runtime:{
+      type:DataTypes.STRING,
+      allowNull:false,
+    },
+
+    
     // user_id:{
     //   type:DataTypes.INTEGER,
-    //   allowNull:false,
-    //   defaultValue:false,
+    //   references:{
+    //       model:'user',
+    //       key:'id'
+    //   },
     // },
+  list_id:{
+    type:DataTypes.INTEGER,
+    references:{
+      model:'list',
+      key:'id'
+    }
+  }
   },
   {
     sequelize,
