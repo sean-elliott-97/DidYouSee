@@ -23,6 +23,8 @@ nav {
     background-size: auto;
 }
 
+/* BUTONS */
+
 .deleteBtn {
 
 background-color: #ff0000;
@@ -44,6 +46,8 @@ border: white 2px solid;
     color:#152238;
     border: #152238 2px solid;
 }
+
+ /* CARDS */
 
 .listCard {
     box-shadow: 2px 2px 10px black;

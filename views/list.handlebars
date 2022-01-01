@@ -1,13 +1,13 @@
 <body class="">
-  
 <main class="container">
+  {{!-- SEARCH MOVIE INPUT --}}
 <div id="movieSearch" class="container column
  d-flex justify-content-center align-items-center;" style="margin-top: 3%;">
-  {{!-- <label for="">type in a movie you'd like to add to your list</label> --}}
   <input type="text" placeholder="Movie Title" id="movieName" style="size: 30%;">
   <button id="search" class="btn addBtn">Add</button>
 </div>
-
+ {{!-- SEARCH MOVIE INPUT --}}
+ {{!-- MOVIE CARDS --}}
 <div class="container row row-cols-md-3 equal h-75   justify-content-evenly align-items-evenly" style="margin-top:4%; margin-bottom:1%;">
   {{#each loggedUserData}}
   <div class="row d-flex justify-content-center align-items-center col mb-4 ">
@@ -22,6 +22,7 @@
   </div>
   {{/each}}
 </div>
+{{!-- MOVIE CARDS --}}
 </main>
 </body>
 <script src="/js/addMovie.js"></script>

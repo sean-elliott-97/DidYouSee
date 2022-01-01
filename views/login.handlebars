@@ -1,77 +1,50 @@
 <main class=" text-center d-flex justify-content-center align-items-evenly">
-
-  <!--BG IMAGE-->
-  {{!-- <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white "
-    style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.jpg');">
-    <!--BG IMAGE--> --}}
-
-
-    <!--SIGN IN / SIGN UP FORM-->
+<!--SIGN IN / SIGN UP FORM-->
     <section class="vh-300">
       <div class="container h-300">
         <div class="card text-black" style="border-radius: 25px; width: 400px; margin-top: 5%;">
           <div class="card-body" style="width:400px; margin: auto;">
             <div class="row align-items-center">
-
+ {{!-- SIGN UP --}}
               <form class=" signup-form" style="float-left">
                 <div class="col">
                   <p class=" h1 fw-bold mb-5  mt-4 ">Sign up</p>
                   <label for="username-signup">Username</label>
                   <input class="form-control inputWth" type="text" id="username-signup" placeholder="Username"
                     style="width: 300px; margin: auto;" />
-
-
                   <br>
-
-
                   <label for="email-signup">Email</label>
                   <input class="form-control inputWth" type="text" id="email-signup" placeholder="Email"
                     style="width: 300px; margin: auto;" />
-
-
                   <br>
-
                   <label for="password-signup">Password</label>
                   <input class="form-control inputWth" type="password" id="password-signup" placeholder="Password"
                     style="width: 300px; margin: auto;" />
-
-
                   <br>
-
                   <button class="btn signBtn" type="submit">Signup</button>
                 </div>
-
               </form>
-
+{{!-- LOGIN --}}
               <form class="login-form" style="float-right">
                 <div class="col">
                   <p class=" h1 fw-bold mb-5  mt-4">Login</p>
                 </div>
-
                 <label for="email-signup">Email</label>
                 <input class="form-control inputWth" type="text" id="email-login" placeholder="Email"
                   style="width: 300px; margin: auto;" />
-
                 <br>
-
                 <label for="password-signup">Password</label>
                 <input class="form-control inputWth" type="password" id="password-login" placeholder="Password"
                   style="width: 300px; margin: auto;" />
-
                 <br>
-
                 <button class="btn logBtn" type="submit">Login</button>
             </div>
             </form>
-
           </div>
         </div>
       </div>
   </div>
   </section>
-
 </main>
-
-
 
 <script src="./js/login.js"></script>
