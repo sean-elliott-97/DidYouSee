@@ -1,30 +1,28 @@
-<div
-  id="movieSearch"
-  style="align-items: center;
-  display: flex;
-  justify-content: center;"
->
+<body class="">
+  
+<main class="container">
+<div id="movieSearch" class="container column
+ d-flex justify-content-center align-items-center;" style="margin-top: 3%;">
   {{!-- <label for="">type in a movie you'd like to add to your list</label> --}}
-  <input type="text" placeholder="movie title"id="movieName" size=50>
-  <button id="search"class ="btn btn-primary">Add</button>
+  <input type="text" placeholder="Movie Title" id="movieName" style="size: 30%;">
+  <button id="search" class="btn addBtn">Add</button>
 </div>
 
-<div class="row row-cols-1 row-cols-md-3 equal h-75" style="align-items: center;
-  display: flex;
-  justify-content: center; margin-left:11%; margin-top:4%; margin-bottom:1%;">
-{{#each loggedUserData}}
-<div class="col mb-4">
-<div class="card h-100"  style="width: 18rem;">
-<a href="/api/movie/{{this.dataValues.id}}/"><img src="{{this.dataValues.poster}}" class="card-img-top" ></img></a>
-<div class="card-body">
-<h5 class="card-title">{{this.dataValues.title}}</h5>
-<p class='card-text'>{{this.dataValues.plot}}</p>
-<button class = "delete btn btn-danger" id="{{this.dataValues.id}}">Delete</button>
+<div class="container row row-cols-md-3 equal h-75   justify-content-evenly align-items-evenly" style="margin-top:4%; margin-bottom:1%;">
+  {{#each loggedUserData}}
+  <div class="row d-flex justify-content-center align-items-center col mb-4 ">
+    <div class="card h-100 listCard" style="width: 18rem; margin:3%;">
+      <a href="/api/movie/{{this.dataValues.id}}/"><img src="{{this.dataValues.poster}}" class="card-img-top listImg"></img></a>
+      <div class="card-body">
+        <h5 class="card-title">{{this.dataValues.title}}</h5>
+        <p class='card-text'>{{this.dataValues.plot}}</p>
+        <button class="delete btn deleteBtn" id="{{this.dataValues.id}}">Delete</button>
+      </div>
+    </div>
+  </div>
+  {{/each}}
 </div>
-</div>
-</div>
-{{/each}}
-</div>
-
+</main>
+</body>
 <script src="/js/addMovie.js"></script>
 <script src="/js/deleteListItems.js"></script>
