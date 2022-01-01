@@ -1,3 +1,4 @@
+//used for signing up and loggin in
 const loginFormHandler = async (event) => {
   event.preventDefault();
 

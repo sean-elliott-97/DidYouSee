@@ -1,4 +1,4 @@
-//console.log(id);
+//used to delete movie from list
 $(".delete").click(async function () {
   let buttonId = this.id;
   const res = await fetch(`/api/movie/${buttonId}/`, {
