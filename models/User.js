@@ -7,7 +7,7 @@ class User extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-
+//user model
 User.init(
   {
     id: {
@@ -35,7 +35,6 @@ User.init(
         len: [6],
       },
     },
-    
   },
   {
     hooks: {

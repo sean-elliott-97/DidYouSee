@@ -1,0 +1,63 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.welcome {
+    font-size: 80px;
+}
+
+.welcome {
+    text-shadow: 2px 2px #ff0000;
+}
+
+
+body {
+    background-color: #152238;
+    background-size: auto;
+}
+
+nav {
+
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #243b53;
+    /* background-color: #626368; */
+    background-size: auto;
+}
+
+/* BUTONS */
+
+.deleteBtn {
+
+background-color: #ff0000;
+color: white;
+
+}
+
+.addBtn {
+color:white;
+border: white 2px solid;
+}
+
+.logBtn {
+    color:#152238;
+    border: #152238 2px solid;
+}
+
+.signBtn {
+    color:#152238;
+    border: #152238 2px solid;
+}
+
+ /* CARDS */
+
+.listCard {
+    box-shadow: 2px 2px 10px black;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.listImg {
+    border: 10px #ff000000 solid;
+    
+}

@@ -1,10 +1,23 @@
-
-
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{movies.poster}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{movies.title}}</h5>
-    <p class="card-text">{{movies.plot}}</p>
-    <a href="#" class="btn btn-primary">Add</a>
-  </div>
-</div>
+<body>
+  <main class="  text-center d-flex justify-content-center align-items-center">
+{{!-- MOVIE CARD --}}
+<section class="vh-500">
+  <div class="container h-500">
+    <div class="card text-black" style="border-radius: 25px; width: 100%; margin-top: 5%; margin-bottom:5%;">
+      <div class="card-body" style="width:300px; margin: auto;">
+        <div class="row align-items-center">
+          <h1 class="card-title">{{movie.title}}</h1>
+          <img src="{{movie.poster}}" style="margin-bottom:3%;" class="listImg" />
+          <div class="row align-items-center"> 
+          <p><strong>Plot:</strong> {{movie.plot}}</p>
+          <p><strong>Rated:</strong> {{movie.rating}}</p>
+          <p><strong>Director:</strong> {{movie.director}}</p>
+          <p><strong>Actors:</strong> {{movie.actors}}</p>
+          <p><strong>Runtime:</strong> {{movie.runtime}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+</main>
+</body>

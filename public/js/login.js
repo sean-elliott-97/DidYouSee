@@ -1,3 +1,4 @@
+//used for signing up and loggin in
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -12,7 +13,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/movie');
+      document.location.replace('/api/list');
     } else {
       alert('Failed to log in.');
     }
@@ -34,7 +35,9 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/movie');
+      
+      alert('A welcome email has been sent to the email address you provided!');
+      document.location.replace('/api/list');
     } else {
       alert('Failed to sign up.');
     }
