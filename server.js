@@ -10,12 +10,13 @@ const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+const API_KEY = process.env.MOVIE_DB_KEY;
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
+  
   store: new SequelizeStore({
     db: sequelize,
   }),
@@ -38,3 +39,5 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
+module.exports=API_KEY

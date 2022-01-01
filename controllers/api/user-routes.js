@@ -1,5 +1,13 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User,List } = require('../../models');
+const env = require("dotenv").config();
+const nodemailer=require('nodemailer');
+const transporterEmail = process.env.TRANSPORTER_EMAIL;
+const transporterPassword=process.env.TRANSPORTER_PASSWORD;
+//transporter: sender information (uses it to authenticate)
+
+
+
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -8,18 +16,45 @@ router.post('/', async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
-    });
-
+      
+    })
+    const dbListData = await List.create({
+      user_id:dbUserData.id,
+    })
+    
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      req.session.user_id=dbUserData.id;
+      
       res.status(200).json(dbUserData);
     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
-});
+  //options
+  const transporter = nodemailer.createTransport({
+    service:"hotmail",
+    auth:{
+      user:transporterEmail,
+      pass:transporterPassword
+  }
+  })
+const options = {
+	from:transporterEmail,
+	to:req.body.email,
+	subject:"DidYouSee account created",
+	text:"Welcome to DidYouSee! Search for movies to add to your list!"
+}
+
+transporter.sendMail(options, function(err,info){
+if(err){
+console.log(err);
+return;
+}
+console.log("Sent:"+info.response);
+})
+})
 
 // Login
 router.post('/login', async (req, res) => {
@@ -29,7 +64,6 @@ router.post('/login', async (req, res) => {
         email: req.body.email,
       },
     });
-
     if (!dbUserData) {
       res
         .status(400)
@@ -48,7 +82,8 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      req.session.user_id=dbUserData.id;
+      // console.log(req.session.user_id);
       res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
@@ -70,4 +105,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-module.exports = router;
+
+
+module.exports=router;
+
