@@ -11,8 +11,9 @@ const helpers = require('./utils/helpers');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const API_KEY = process.env.MOVIE_DB_KEY;
+const SECRET = process.env.SESSION_SECRET;
 const sess = {
-  secret: 'Super secret secret',
+  secret: SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true,

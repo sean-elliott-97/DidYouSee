@@ -15,7 +15,7 @@
 {{#each loggedUserData}}
 <div class="col mb-4">
 <div class="card h-100"  style="width: 18rem;">
-<a href="/movie/{{this.dataValues.id}}"><img src="{{this.dataValues.poster}}" class="card-img-top" ></img></a>
+<a href="/api/movie/{{this.dataValues.id}}/"><img src="{{this.dataValues.poster}}" class="card-img-top" ></img></a>
 <div class="card-body">
 <h5 class="card-title">{{this.dataValues.title}}</h5>
 <p class='card-text'>{{this.dataValues.plot}}</p>

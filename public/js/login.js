@@ -34,6 +34,8 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      
+      alert('A welcome email has been sent to the email address you provided!');
       document.location.replace('/api/list');
     } else {
       alert('Failed to sign up.');
