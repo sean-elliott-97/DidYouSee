@@ -33,9 +33,9 @@
   * <p><a href = "https://www.npmjs.com/package/axios">axios</a></p>
   * <p><a href = "https://www.npmjs.com/package/bcrypt">bcrypt</a></p>
   * <p><a href = "https://www.npmjs.com/package/connect-session-sequelize">connect-session-sequelize</a></p>
-  * <p><a href = "https://www.npmjs.com/package/dotenv">dotenv (add license)</a></p>
+  * <p><a href = "https://www.npmjs.com/package/dotenv">dotenv</a></p>
   * <p><a href = "https://www.npmjs.com/package/express">express</a></p>
-  * <p><a href = "https://www.npmjs.com/package/express-handlebars">express-handlebars (add license)</a></p>
+  * <p><a href = "https://www.npmjs.com/package/express-handlebars">express-handlebars</a></p>
   * <p><a href = "https://www.npmjs.com/package/express-session">express-session</a></p>
   * <p><a href = "https://www.npmjs.com/package/handlebars">handlebars</a></p>
   * <p><a href = "https://www.npmjs.com/package/mysql2">mysql2</a></p>
